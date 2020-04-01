@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import Search from "./components/Search";
 import axios from "axios";
+import Results from "./components/Results";
 
 function App() {
 
@@ -44,6 +45,8 @@ function App() {
       </header>
       <main>
         <Search  handleInput={handleInput} handleSearch={handleSearch}/>
+        {console.log(state.results)}
+        <Results results={state.results}/>
       </main>
     </div>
   );
