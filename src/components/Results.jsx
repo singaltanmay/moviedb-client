@@ -12,7 +12,7 @@ class Results extends Component{
 
         return <section className="results">
             {this.props.results.map(result => (
-                <Result result = {result}/>
+                <Result key={result.imdbID} result = {result}/>
             ))}
         </section>
     }
