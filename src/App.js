@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import Search from "./components/Search";
+import axios from "axios";
 
 function App() {
 
@@ -9,7 +10,21 @@ function App() {
     selected:{}
   })
 
-  const apiKey = "8e13383"
+  const baseUrl = "http://www.omdbapi.com/?apikey=8e13383"
+  
+  const handleSearch = (e) =>{
+    if(e.key === "Enter"){
+      axios(baseUrl + "&s=" + state.s)
+        .then(({data}) => {
+          let results = data.Search
+          
+          setState(prevState => {
+            return {...prevState, results : results}
+          })
+
+        })
+    }
+  }
   
   const handleInput = (e) => {
     let s = e.target.value
@@ -28,7 +43,7 @@ function App() {
         <h1>Movie Database</h1>
       </header>
       <main>
-        <Search  handleInput={handleInput}/>
+        <Search  handleInput={handleInput} handleSearch={handleSearch}/>
       </main>
     </div>
   );
