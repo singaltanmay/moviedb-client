@@ -5,7 +5,7 @@ class Results extends Component{
 
     render(){
 
-        if(this.props.results == undefined){
+        if(this.props.results === undefined){
             return <h4>No results found!</h4>
         }
     
