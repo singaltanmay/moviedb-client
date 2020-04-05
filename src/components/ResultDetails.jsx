@@ -1,16 +1,26 @@
-import React, { Component } from "react";
 import axios from "axios";
-import App from "../App";
+import React, { Component } from "react";
 import ReactDOM from "react-dom";
+import App from "../App";
 
 const baseUrl = "http://www.omdbapi.com/?apikey=8e13383";
 
 export class ResultDetails extends Component {
   state = {
     item: {
+      imdbID: "",
       title: "",
+      type: "",
       year: "",
       director: "",
+      actors: "",
+      genre: "",
+      country: "",
+      awards: "",
+      language: "",
+      plot: "",
+      poster: "",
+      released: "",
     },
   };
 
@@ -24,13 +34,21 @@ export class ResultDetails extends Component {
   };
 
   render() {
+    const item = this.state.item;
     return (
       <div>
-        <img src="" alt="" />
-        <h4>{this.state.item.director}</h4>
-        <h3>{this.state.item.title}</h3>
+        <span className="xmk-poster">
+          <img src={item.poster} alt="poster" />
+        </span>
+
+        <div className="minInfoBar">
+          <h3 className="xmk-title">{item.title}</h3>
+        </div>
+
+        <h4>{item.director}</h4>
+
         <button className="back-to-app-button" onClick={this.backToApp}>
-          Close
+          Home
         </button>
       </div>
     );
@@ -46,7 +64,12 @@ export class ResultDetails extends Component {
       this.setState((prevState) => {
         return {
           ...prevState,
-          item: { title: data.Title, year: data.Year, director: data.Director },
+          item: {
+            title: data.Title,
+            year: data.Year,
+            director: data.Director,
+            poster: data.Poster,
+          },
         };
       });
     });

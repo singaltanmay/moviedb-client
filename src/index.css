@@ -93,3 +93,24 @@ section {
   top: 24px;
   right: 24px;
 }
+
+.minInfoBar {
+  float: right;
+  background-color: aqua;
+  position: absolute;
+  top: 48px;
+  margin-left: 32.45vw;
+}
+
+.minInfoBar .xmk-title {
+  color: white;
+  padding: 8px;
+  font-size: 24px;
+  font-weight: 300;
+}
+
+.minInfoBar .xmk-poster {
+  float: left;
+  position: absolute;
+  margin-left: 16px;
+}
