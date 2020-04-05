@@ -1,6 +1,6 @@
 import React from "react";
 
-const Search = ({handleInput, handleSearch}) => {
+const Search = ({ handleInput, handleSearch }) => {
   return (
     <section className="searchbox-wrap">
       <input

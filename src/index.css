@@ -53,13 +53,13 @@ section {
   box-shadow: 0px 0px 8px 3px #4484c4;
 }
 
-.results{
+.results {
   display: flex;
   flex-wrap: wrap;
   margin: 0px 15px;
 }
 
-.results .result{
+.results .result {
   width: 33%;
   min-width: 250px;
   padding: 15px;
@@ -68,12 +68,12 @@ section {
   cursor: pointer;
 }
 
-.results .result img{
+.results .result img {
   display: block;
   width: 100%;
 }
 
-.results .result h3{
+.results .result h3 {
   color: white;
   font-size: 20px;
   font-weight: 600;
@@ -83,7 +83,13 @@ section {
   transition: 0.4s ease-out;
 }
 
-.results .result:hover h3{
-background: white;
-color: #223343;
+.results .result:hover h3 {
+  background: white;
+  color: #223343;
+}
+
+.back-to-app-button {
+  position: absolute;
+  top: 24px;
+  right: 24px;
 }
